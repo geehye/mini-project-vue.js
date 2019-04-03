@@ -132,5 +132,8 @@ export default {
   min-width: 480px;
   padding: 20px;
   bottom-margin: 10px;
+  /* text-overflow: ellipsis;
+     white-space: nowrap;
+     overflow: hidden;         did not work */
 }
 </style>
