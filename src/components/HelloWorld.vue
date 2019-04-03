@@ -134,6 +134,6 @@ export default {
   bottom-margin: 10px;
   /* text-overflow: ellipsis;
      white-space: nowrap;
-     overflow: hidden;         did not work */
+     overflow: hidden;         these did not work */
 }
 </style>
