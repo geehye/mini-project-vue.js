@@ -26,7 +26,7 @@
         <h2>Recent Post</h2>
         <h5>My first Harry Potter trip in Ireland</h5>
         <h6>Jun 17, 2018</h6>
-        <p>Some text...........</p>
+        <p>Some text.................................</p>
       </div>
       <div class="card">
         <h2>Popular Post</h2>

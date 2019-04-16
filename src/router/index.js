@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
 
-Vue.use(Router) // add router plugin to vue application
+Vue.use(Router)
 
 export default new Router({
   routes: [
