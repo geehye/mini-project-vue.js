@@ -1,22 +1,24 @@
 <template>
 <b-container class="">
   <div class="header">
-    <h1>Welcome to Gee's Website</h1>
-    <p>Share my footsteps for Harry Potter and Marvel film series</p>
+    <h1>Welcome to Gee's test Website</h1>
+    <p>I am learning Vue and practicing it here!</p>
   </div>
   <div class="topnav">
-    <a href="#">Home</a>
-    <a v-on:click="notReadyYet" href="#">HP</a>
-    <a v-on:click="notReadyYet" href="#">MCU</a>
-    <a v-on:click="notReadyYet" href="#" style="float:right">TEST</a>
+    <a href="#" style="float: left;">Home</a>
+    <b-dropdown id="orderDropdown" text="Order" bg-transparent style="float: right;">
+      <b-dropdown-item>Ascending</b-dropdown-item>
+      <b-dropdown-item>Descending</b-dropdown-item>
+    </b-dropdown>
+    <a href="#" v-b-modal.filterModal style="float: right;">Filter</a>
 
-    <b-modal ref="notReadyYetModal">It is not ready yet.</b-modal>
+    <ModalVue @selectedCategory="updateCategory"></ModalVue>
   </div>
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
-        <h3>Who am I</h3>
-        <img src="" />
+        <h3 style="text-align: center;">About me</h3>
+        <center><img src="../assets/profil_image.jpg" style="max-width: 150px; max-height: 150px;"/></center>
         <h5>Jihye Catherine Kang</h5>
         <p>I am an web front-end developer</p>
       </div>
@@ -44,55 +46,27 @@
 </template>
 
 <script>
+import ModalVue from './Modal'
+
 export default {
   name: 'Main',
+  components: {
+    ModalVue
+  },
   data: function () {
     return {
     }
   },
   methods: {
-    notReadyYet: function (evt) {
-      this.$refs['notReadyYetModal'].show()
+    updateCategory(variable) {
+      this.childData = variable
+      this.httpRequest()
+    },
+    httpRequest() {
+      this.$http.get(`http://comento.cafe24.com/category.php`).then(result => {
+        this.categories = result.data.list
+      })
     }
   }
 }
 </script>
-
-<style>
-.header {
-  padding: 30px;
-  text-align: center;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none; /* delete link-underline */
-}
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-p.post {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-</style>
