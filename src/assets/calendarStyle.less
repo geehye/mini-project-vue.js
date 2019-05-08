@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+div {
+  display: block;
+}
+.prev, .next {
+  color: #999;
+  cursor: pointer;
+}
+.calendar-container {
+  position: relative;
+  //height: calc(100% - 45px);
+  min-width: 968px;
+  width: 100%;
+  transition: width 0.5s;
+}
+.calendar-head {
+  top: 0px;
+  left: 180px;
+  height: 69px;
+  //position: absolute;
+  background: #f0f0f0;
+  z-index: 1;
+}
+.nav-search-bar {
+  height: calc(100% - 42px);
+  width: 100%;
+}
+.calendar-nav {
+  position: absolute;
+  left: 50%;
+  margin-left: -67px;
+  padding: 10px;
+  float: left;
+  font-size: 21px;
+}
+.dayname-container {
+  position: absolute;
+  bottom: 0px;
+  height: 21px;
+  width: 100%;
+}
+.calendar-cell {
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  width: 14.28571%;
+  text-align: center;
+  float: left;
+}
+.calendar-cell .name-of-days {
+  padding: 1px;
+  background-color: rgb(187, 187, 187);
+  font-size: 12px;
+  color: #fff;
+}
+.top-calendar-week {
+  position: absolute;
+  z-index: 100;
+  bottom: 0px;
+  width: 100%;
+  height: 21px;
+}
+.day-label {
+  color: #777;
+  background-color: rgb(250, 250, 250);
+  border-bottom: none;
+  font-size: 14px;
+}
+.calendar-body {
+  position: absolute;
+  height: 100%;
+  overflow-y: scroll;
+  background: #fff;
+  display: table;
+  width: 100%;
+  height: 90px;
+}
+.calendar-week {
+  overflow: hidden;
+  position: relative;
+  display: table-row;
+}
+.day-content {
+  min-height: 150px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.current {
+  color: #ff6813;
+  font-weight: 700;
+}

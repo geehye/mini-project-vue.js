@@ -8,7 +8,8 @@ import less from 'less'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import './assets/mystyle.less'
+//import './assets/mystyle.less'
+import './assets/calendarStyle.less'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
